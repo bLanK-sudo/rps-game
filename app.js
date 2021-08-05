@@ -1,7 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const port = 3000
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
@@ -30,4 +29,8 @@ app.post('/reset', (req, res) => {
     reset(re)
     res.redirect('/')
 })
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
