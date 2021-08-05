@@ -1,0 +1,46 @@
+<%- include('partials/header') -%>
+
+<body>
+  <div class="container-top">
+    <div class="header">
+      <h2>ROCK</h2>
+      <h2>PAPER</h2>
+      <h2>SCISSORS</h2>
+    </div>
+    <div class="score">
+      <h3>SCORE</h3>
+      <p><%=count%></p>
+    </div>
+  </div>
+  <div class="title hidden">
+    <p class="re"></p>
+  </div>
+  <form action="/" method="post">
+    <input type="hidden" class="user-value" name="user" value="">
+    <input type="hidden" class="pc-value" name="pc" value="">
+    <input type="hidden" class="res" name="title" value="">
+    <input class="restart hidden" type="submit" name="restart" value="PLAY AGAIN">
+  </form>
+  <form action="/reset" method="post">
+    <input type="submit" class="count" name="count0" value="RESET COUNT">
+  </form>
+  <div class="picked hidden">
+    <p class="pick"></p>
+    <p class="house-pick"></p>
+  </div>
+  
+  <div class="container">
+    <input type="button" class="ellipse1" name="rock">
+    <input type="button" name="paper" class="ellipse2">
+    <input type="button" name="scissor" class="ellipse3">
+    <input type="button" class="hidden element" name="">
+  </div>
+  </div>
+  <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  <script src="main.js"></script>
+</body>
+
+<%- include('partials/footer') -%>
